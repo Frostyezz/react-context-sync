@@ -1,0 +1,8 @@
+src/
+tests/
+rollup.config.js
+jest.config.ts
+tsconfig.json
+.eslintrc.json
+node_modules/
+*.tgz

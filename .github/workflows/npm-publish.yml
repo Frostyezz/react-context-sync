@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - run: npm install
+      - run: rm -rf node_modules/react node_modules/react-dom
       - run: npm run build 
       - uses: actions/upload-artifact@v4
         with:

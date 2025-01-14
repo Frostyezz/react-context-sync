@@ -23,7 +23,6 @@ export const SyncProvider: React.FC<SyncProviderProps> = ({
     syncEngine.onMessage((action) => {
       dispatch(action);
     });
-    console.log("SyncProvider mounted");
     return () =>
       // Prevent instant channel closure in development when using React Strict Mode
       // https://react.dev/reference/react/StrictMode#fixing-bugs-found-by-re-running-effects-in-development

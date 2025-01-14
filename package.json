@@ -5,6 +5,14 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Frostyezz/react-context-sync"
+  },
+  "homepage": "https://github.com/Frostyezz/react-context-sync",
+  "bugs": {
+    "url": "https://github.com/Frostyezz/react-context-sync/issues"
+  },
   "keywords": [
     "react",
     "context",
@@ -23,7 +31,7 @@
     "publish:local": "npm pack && npm link",
     "publish:prod": "npm pack && npm publish"
   },
-  "author": "Frostyezz",
+  "author": "Frostyezz <robert.moraru2012@yahoo.com>",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",

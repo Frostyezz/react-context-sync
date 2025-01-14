@@ -1,6 +1,6 @@
 {
   "name": "react-context-sync",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A React library to sync Context values across browser tabs.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

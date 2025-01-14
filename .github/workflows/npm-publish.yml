@@ -2,11 +2,31 @@ name: react-context-sync
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'package.json'
+
+jobs:
+  check-version-change:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract package version
+        id: pkg
+        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
+      - name: Check if version has changed
+        id: version-check
+        run: |
+          if git log -1 --pretty=format:%B | grep -q "version"; then
+            echo "Version change detected."
+          else
+            echo "Version unchanged. Exiting."
+            exit 0
+          fi
 
 jobs:
   build:
+    needs: check-version-change
+    if: success()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,6 +43,7 @@ jobs:
 
   publish-npm:
     needs: build
+    if: success()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
